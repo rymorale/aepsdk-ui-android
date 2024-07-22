@@ -154,7 +154,7 @@ internal sealed class AEPPushTemplate(val data: NotificationData) {
 
         // extract the remaining text information
         if (templateType == PushTemplateType.MULTI_ICON) {
-            // Title and body are not required for FiveIconPushTemplate
+            // Title and body are not required for MultiIconPushTemplate
             title = ""
             body = ""
         } else {
