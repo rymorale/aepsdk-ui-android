@@ -130,8 +130,10 @@ class MultiIconPushTemplateTests {
     @Test
     fun testBMultiIconPushTemplateNoTitleBody() {
         val dataMap = getMockedDataMapWithForMultiIcon()
-        dataMap.removeKeysFromMap(PushTemplateConstants.PushPayloadKeys.TITLE,
-            PushTemplateConstants.PushPayloadKeys.BODY)
+        dataMap.removeKeysFromMap(
+            PushTemplateConstants.PushPayloadKeys.TITLE,
+            PushTemplateConstants.PushPayloadKeys.BODY
+        )
 
         val data = MapData(dataMap)
         val multiIconPushTemplate = MultiIconPushTemplate(data)
