@@ -45,17 +45,15 @@ internal object InputBoxNotificationBuilder {
         trackerActivityClass: Class<out Activity>?,
         broadcastReceiverClass: Class<out BroadcastReceiver>?
     ): NotificationCompat.Builder {
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.N) {
+            throw NotificationConstructionFailedException("Input box push notification on devices below Android N is not supported.")
+        }
+
         Log.trace(LOG_TAG, SELF_TAG, "Building an input box template push notification.")
         val packageName = context.packageName
         val smallLayout = RemoteViews(packageName, R.layout.push_template_collapsed)
-        var expandedLayout = RemoteViews(packageName, R.layout.push_template_expanded)
-
-        // API23 and below have a limited notification display area. the notification elements
-        // must use a smaller area to fix buttons not showing on expanded notification.
-        // see MOB-21262 for more info
-        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.M) {
-            expandedLayout = RemoteViews(packageName, R.layout.push_template_expanded_api23)
-        }
+        val expandedLayout = RemoteViews(packageName, R.layout.push_template_expanded)
 
         val notificationManager =
             context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager

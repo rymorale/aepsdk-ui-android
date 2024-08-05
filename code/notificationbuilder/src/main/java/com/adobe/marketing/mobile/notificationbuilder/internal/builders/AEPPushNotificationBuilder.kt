@@ -114,8 +114,8 @@ internal object AEPPushNotificationBuilder {
             builder.setCustomHeadsUpContentView(expandedLayout)
         }
 
-        // API23 and 22 heads up display fix, see MOB-21447 for more info
-        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.M && Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
+        // API22 and 23 heads up display fix, see MOB-21447 for more info
+        if (Build.VERSION.SDK_INT == Build.VERSION_CODES.M || Build.VERSION.SDK_INT == Build.VERSION_CODES.LOLLIPOP_MR1) {
             builder.setCustomHeadsUpContentView(smallLayout)
         }
 
