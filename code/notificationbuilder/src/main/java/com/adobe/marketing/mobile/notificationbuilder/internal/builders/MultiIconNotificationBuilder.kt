@@ -129,6 +129,7 @@ internal object MultiIconNotificationBuilder {
                     R.id.icon_item_image_view,
                     interactionUri,
                     null,
+                    null,
                     pushTemplate.data.getBundle()
                 )
             }
