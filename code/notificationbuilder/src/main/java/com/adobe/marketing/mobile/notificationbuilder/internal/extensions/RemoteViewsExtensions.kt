@@ -211,7 +211,7 @@ internal fun RemoteViews.setRemoteViewClickAction(
             trackerActivityClass,
             actionUri,
             actionId,
-            actionType?.name,
+            actionType,
             intentExtra
         )
     setOnClickPendingIntent(targetViewResourceId, pendingIntent)

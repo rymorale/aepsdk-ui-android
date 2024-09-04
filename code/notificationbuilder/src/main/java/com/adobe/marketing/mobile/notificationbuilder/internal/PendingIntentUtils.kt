@@ -105,10 +105,10 @@ internal object PendingIntentUtils {
         trackerActivityClass: Class<out Activity>?,
         actionUri: String?,
         actionID: String?,
-        actionType: String?,
+        actionType: PushTemplateConstants.ActionType?,
         intentExtras: Bundle?
     ): PendingIntent? {
-        val intent = if (PushTemplateConstants.ActionType.DISMISS.name == actionType) {
+        val intent = if (PushTemplateConstants.ActionType.DISMISS == actionType) {
             Intent(PushTemplateConstants.NotificationAction.DISMISSED)
         } else Intent(PushTemplateConstants.NotificationAction.CLICKED)
 

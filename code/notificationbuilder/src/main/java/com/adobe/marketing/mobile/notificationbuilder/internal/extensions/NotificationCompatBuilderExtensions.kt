@@ -197,7 +197,7 @@ internal fun NotificationCompat.Builder.setNotificationClickAction(
         trackerActivityClass,
         actionUri,
         null,
-        actionType?.name,
+        actionType,
         intentExtras
     )
     setContentIntent(pendingIntent)
