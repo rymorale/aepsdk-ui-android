@@ -258,7 +258,7 @@ internal fun NotificationCompat.Builder.addActionButtons(
                     trackerActivityClass,
                     eachButton.link,
                     eachButton.label,
-                    null,
+                    eachButton.type,
                     intentExtras
                 )
             } else {
@@ -267,7 +267,7 @@ internal fun NotificationCompat.Builder.addActionButtons(
                     trackerActivityClass,
                     null,
                     eachButton.label,
-                    null,
+                    eachButton.type,
                     intentExtras
                 )
             }
